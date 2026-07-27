@@ -1,0 +1,60 @@
+<div class="top-bar">
+    <h2>Welcome {{user}}</h2>
+
+    <a href="/signout">
+        <button type="button">
+            Sign Out
+        </button>
+    </a>
+</div>
+
+<h3>Available Books</h3>
+
+<form action="/borrow" method="post">
+
+    {{#each availableBooks}}
+
+    <div>
+        <input 
+            type="checkbox" 
+            name="books" 
+            value="{{Title}}">
+
+        {{Title}} - {{Author}}
+    </div>
+
+    {{/each}}
+
+    <br>
+
+    <button type="submit">
+        Borrow
+    </button>
+
+</form>
+
+
+<h3>Borrowed Books</h3>
+
+<form action="/return" method="post">
+
+    {{#each borrowedBooks}}
+
+    <div>
+        <input 
+            type="checkbox" 
+            name="books" 
+            value="{{Title}}">
+
+        {{Title}} - {{Author}}
+    </div>
+
+    {{/each}}
+
+    <br>
+
+    <button type="submit">
+        Return
+    </button>
+
+</form>

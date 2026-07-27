@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    background-color: #f4f4f4;
+}
+
+.landing-container {
+    background-image: url('/images/library.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn,
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+}
+
+button:hover:not(:disabled),
+.borrow-btn:hover:not(:disabled),
+.btn:hover {
+    background-color: #005fa3;
+}
+
+button:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    transform: none;
+}
+
+button:disabled:hover {
+    background-color: #b0c4de;
+}
+
+.signin-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #e9f0ff, #f4f4f4);
+}
+
+.signin-box {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 12px;
+    width: 340px;
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.signin-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: block;
+    box-sizing: border-box;
+}
+
+.signin-box button {
+    width: 100%;
+    padding: 12px;
+
+    background: #0077cc;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signin-box button:hover {
+    background: #005fa3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077cc;
+    color: white;
+    padding: 15px;
+}
+
+.signout-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.left-panel {
+    width: 65%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.right-panel {
+    width: 35%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.book-card {
+    background: #f9f9f9;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+
+    transition: 0.2s ease;
+}
+
+.book-card:hover {
+    background: #eef6ff;
+    transform: translateY(-2px);
+}
+
+.book-card label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.borrow-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.snake-text span {
+    display: inline-block;
+    color: white;
+    animation: snakeWave 1.5s infinite ease-in-out;
+}
+
+.snake-text span:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.snake-text span:nth-child(even) {
+    animation-delay: 0.15s;
+}
+
+@keyframes snakeWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
